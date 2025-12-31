@@ -2,7 +2,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "Xernoa Hub",
-   Icon = 128740507277329, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   Icon = 95851636367854, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Xernoa Hub",
    LoadingSubtitle = "by @x5_vam",
    ShowText = "Xerona", -- for mobile users to unhide rayfield, change if you'd like
