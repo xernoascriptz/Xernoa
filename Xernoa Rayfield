@@ -1,0 +1,529 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Xernoa Hub",
+   Icon = 123825707562038, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Xernoa Hub",
+   LoadingSubtitle = "by @x5_vam",
+   ShowText = "Xerona", -- for mobile users to unhide rayfield, change if you'd like
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Xernoa Hub"
+   },
+
+   Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Xernoa Hub Key",
+      Subtitle = "Key System",
+      Note = "join the discord...", -- Use this to tell the user how to get a key
+      FileName = "Xernoa Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"27jUKL","OWL16","75KJ1"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local BasicScriptsTab = Window:CreateTab("Basic Scripts📚", 4483362458) -- Title, Image
+local OtherTab = Window:CreateTab("Other 🔍", 4483362458) -- Title, Image
+local InfoTab = Window:CreateTab("Info ⚙️", 4483362458) -- Title, Image
+local GameHubsTab = Window:CreateTab("Game Hubs 📁", 4483362458) -- Title, Image
+local FEScriptsTab = Window:CreateTab("FE 🖥️‼️", 4483362458) -- Title, Image
+
+local BasicScriptsSection = BasicScriptsTab:CreateSection("Section Example")
+local InfoSection = OtherTab:CreateSection("Info About Script")
+local GameHubsSection = GameHubsTab:CreateSection("Main Games")
+local FEScriptsSection = FEScriptsTab:CreateSection("FE Scriptz 4 u‼️")
+
+Rayfield:Notify({
+   Title = "Hi, User, Join the Discord Server For Updates..",
+   Content = "Script Loaded",
+   Duration = 6.5,
+   Image = 4483362458,
+})
+
+local Button = BasicScriptsTab:CreateButton({
+   Name = "INF Yield ♾️",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+   end,
+})
+
+local Slider = BasicScriptsTab:CreateSlider({
+   Name = "⚡️Speed-Force⚡️",
+   Range = {0, 700},
+   Increment = 10,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+local Slider = BasicScriptsTab:CreateSlider({
+    Name = "Jump Height",
+    Range = {10, 500},
+    Increment = 1,
+    Suffix = "Height",
+    CurrentValue = 10,
+    Flag = "jump", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end,
+ })
+
+local Button = BasicScriptsTab:CreateButton({
+   Name = "Fly Gui V3",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+   end,
+})
+
+local Button = FEScriptsTab:CreateButton({
+   Name = "Polaria FE",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastefy.app/JmaD2ivk/raw"))()
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "GAG WhyHub Keyless",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/JustLuaDeveloper/WhyHub/refs/heads/main/Loader.lua"))()
+   end,
+})
+
+local Button = FEScriptsTab:CreateButton({
+   Name = "CK's Btools GUI (WORKS IN ADMIN GAMES)",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/aNxeh5wu"))()
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "VapeVoid Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/loader.lua", true))()
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "game hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/61f9e4e53e0d639db1122d02cc47aec30905c362808b723ee3bddbaad6721c9c/download"))()
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "m00ndiety SAB Script",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/m00ndiety/Steal-a-brainrot/refs/heads/main/Steal-a-Brainrot"))()
+   end,
+})
+
+local Button = InfoTab:CreateButton({
+   Name = "Destroy/Close GUI‼️",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
+
+local Button = BasicScriptsTab:CreateButton({
+   Name = "Teleport GUI",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/pJzTxaTu"))()
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "NDS Hub Keyless",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Thebestofhack123/2.0/refs/heads/main/NDS"))()
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "The DarkOnes GUI (brookhaven)",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/TheDarkoneMarcillisePex/Other-Scripts/main/Brook%20Haven%20Gui'))()
+   end,
+})
+
+local Button = FEScriptsTab:CreateButton({
+   Name = "Skybox Head Aura (prob clientsided)",
+   Callback = function()
+   --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://pastefy.app/T7IIAb6T/raw"))()
+   end,
+})
+
+local Button = FEScriptsTab:CreateButton({
+   Name = "Imperdiamond GUI",
+   Callback = function()
+   --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ImperdiamondGUI = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local SkyBoxBtn = Instance.new("TextButton")
+local DecalSpamBtn = Instance.new("TextButton")
+local ParticlesBtn = Instance.new("TextButton")
+local Fire666Btn = Instance.new("TextButton")
+local JumpscareBtn = Instance.new("TextButton")
+local HintBtn = Instance.new("TextButton")
+local MessageBtn = Instance.new("TextButton")
+local MajakThemeBtn = Instance.new("TextButton")
+local k00pkiddThemeBtn = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local StopAllSoundsBtn = Instance.new("TextButton")
+
+--Properties:
+
+ImperdiamondGUI.Name = "ImperdiamondGUI"
+ImperdiamondGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ImperdiamondGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ImperdiamondGUI.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ImperdiamondGUI
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 225)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.212438419, 0, 0.244155839, 0)
+MainFrame.Selectable = true
+MainFrame.Size = UDim2.new(0.222290635, 0, 0.274025977, 0)
+MainFrame.Draggable = true
+
+TextLabel.Parent = MainFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.194942236, 0, 0.00947867334, 0)
+TextLabel.Size = UDim2.new(0.609418273, 0, 0.123222746, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Imperdiamond GUI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+SkyBoxBtn.Name = "SkyBoxBtn"
+SkyBoxBtn.Parent = MainFrame
+SkyBoxBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SkyBoxBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SkyBoxBtn.BorderSizePixel = 0
+SkyBoxBtn.Position = UDim2.new(0.02078522, 0, 0.134482756, 0)
+SkyBoxBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+SkyBoxBtn.Font = Enum.Font.SourceSans
+SkyBoxBtn.Text = "SkyBox"
+SkyBoxBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+SkyBoxBtn.TextScaled = true
+SkyBoxBtn.TextSize = 14.000
+SkyBoxBtn.TextWrapped = true
+
+DecalSpamBtn.Name = "DecalSpamBtn"
+DecalSpamBtn.Parent = MainFrame
+DecalSpamBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DecalSpamBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DecalSpamBtn.BorderSizePixel = 0
+DecalSpamBtn.Position = UDim2.new(0.348926157, 0, 0.134482756, 0)
+DecalSpamBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+DecalSpamBtn.Font = Enum.Font.SourceSans
+DecalSpamBtn.Text = "Decal Spam"
+DecalSpamBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+DecalSpamBtn.TextScaled = true
+DecalSpamBtn.TextSize = 14.000
+DecalSpamBtn.TextWrapped = true
+
+ParticlesBtn.Name = "ParticlesBtn"
+ParticlesBtn.Parent = MainFrame
+ParticlesBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ParticlesBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ParticlesBtn.BorderSizePixel = 0
+ParticlesBtn.Position = UDim2.new(0.673698127, 0, 0.134482756, 0)
+ParticlesBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+ParticlesBtn.Font = Enum.Font.SourceSans
+ParticlesBtn.Text = "Particles"
+ParticlesBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ParticlesBtn.TextScaled = true
+ParticlesBtn.TextSize = 14.000
+ParticlesBtn.TextWrapped = true
+
+Fire666Btn.Name = "Fire666Btn"
+Fire666Btn.Parent = MainFrame
+Fire666Btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Fire666Btn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Fire666Btn.BorderSizePixel = 0
+Fire666Btn.Position = UDim2.new(0.0207852609, 0, 0.356871992, 0)
+Fire666Btn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+Fire666Btn.Font = Enum.Font.SourceSans
+Fire666Btn.Text = "666"
+Fire666Btn.TextColor3 = Color3.fromRGB(0, 0, 0)
+Fire666Btn.TextScaled = true
+Fire666Btn.TextSize = 14.000
+Fire666Btn.TextWrapped = true
+
+JumpscareBtn.Name = "JumpscareBtn"
+JumpscareBtn.Parent = MainFrame
+JumpscareBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JumpscareBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+JumpscareBtn.BorderSizePixel = 0
+JumpscareBtn.Position = UDim2.new(0.348926157, 0, 0.356871992, 0)
+JumpscareBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+JumpscareBtn.Font = Enum.Font.SourceSans
+JumpscareBtn.Text = "Jumpscare"
+JumpscareBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+JumpscareBtn.TextScaled = true
+JumpscareBtn.TextSize = 14.000
+JumpscareBtn.TextWrapped = true
+
+HintBtn.Name = "HintBtn"
+HintBtn.Parent = MainFrame
+HintBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HintBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HintBtn.BorderSizePixel = 0
+HintBtn.Position = UDim2.new(0.673698127, 0, 0.356871992, 0)
+HintBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+HintBtn.Font = Enum.Font.SourceSans
+HintBtn.Text = "Hint"
+HintBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+HintBtn.TextScaled = true
+HintBtn.TextSize = 14.000
+HintBtn.TextWrapped = true
+
+MessageBtn.Name = "MessageBtn"
+MessageBtn.Parent = MainFrame
+MessageBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MessageBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MessageBtn.BorderSizePixel = 0
+MessageBtn.Position = UDim2.new(0.0199584961, 0, 0.565402806, 0)
+MessageBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+MessageBtn.Font = Enum.Font.SourceSans
+MessageBtn.Text = "Message"
+MessageBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+MessageBtn.TextScaled = true
+MessageBtn.TextSize = 14.000
+MessageBtn.TextWrapped = true
+
+MajakThemeBtn.Name = "TubuusThemeBtn"
+MajakThemeBtn.Parent = MainFrame
+MajakThemeBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MajakThemeBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MajakThemeBtn.BorderSizePixel = 0
+MajakThemeBtn.Position = UDim2.new(0.346828312, 0, 0.565402806, 0)
+MajakThemeBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+MajakThemeBtn.Font = Enum.Font.SourceSans
+MajakThemeBtn.Text = "Imperdiamond Theme"
+MajakThemeBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+MajakThemeBtn.TextScaled = true
+MajakThemeBtn.TextSize = 14.000
+MajakThemeBtn.TextWrapped = true
+
+k00pkiddThemeBtn.Name = "k00pkiddThemeBtn"
+k00pkiddThemeBtn.Parent = MainFrame
+k00pkiddThemeBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+k00pkiddThemeBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+k00pkiddThemeBtn.BorderSizePixel = 0
+k00pkiddThemeBtn.Position = UDim2.new(0.673698127, 0, 0.565402806, 0)
+k00pkiddThemeBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+k00pkiddThemeBtn.Font = Enum.Font.SourceSans
+k00pkiddThemeBtn.Text = "k00pkidd Theme"
+k00pkiddThemeBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+k00pkiddThemeBtn.TextScaled = true
+k00pkiddThemeBtn.TextSize = 14.000
+k00pkiddThemeBtn.TextWrapped = true
+
+TextLabel_2.Parent = MainFrame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.017656913, 0, 0.781990528, 0)
+TextLabel_2.Size = UDim2.new(0.418282539, 0, 0.165876776, 0)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Remade it by Imperdiamond"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+StopAllSoundsBtn.Name = "StopAllSoundsBtn"
+StopAllSoundsBtn.Parent = MainFrame
+StopAllSoundsBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StopAllSoundsBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+StopAllSoundsBtn.BorderSizePixel = 0
+StopAllSoundsBtn.Position = UDim2.new(0.596135795, 0, 0.778672934, 0)
+StopAllSoundsBtn.Size = UDim2.new(0.30193907, 0, 0.165876776, 0)
+StopAllSoundsBtn.Font = Enum.Font.SourceSans
+StopAllSoundsBtn.Text = "Stop All Sounds"
+StopAllSoundsBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+StopAllSoundsBtn.TextScaled = true
+StopAllSoundsBtn.TextSize = 14.000
+StopAllSoundsBtn.TextWrapped = true
+
+SkyBoxBtn.MouseButton1Click:Connect(function()
+	s = Instance.new("Sky")
+	s.Name = "Sky"
+	s.Parent = game.Lighting
+	s.SkyboxBk = "http://www.roblox.com/asset/?id=106178930998209"
+	s.SkyboxDn = "http://www.roblox.com/asset/?id=106178930998209"
+	s.SkyboxFt = "http://www.roblox.com/asset/?id=106178930998209"
+	s.SkyboxLf = "http://www.roblox.com/asset/?id=106178930998209"
+	s.SkyboxRt = "http://www.roblox.com/asset/?id=106178930998209"
+	s.SkyboxUp = "http://www.roblox.com/asset/?id=106178930998209"
+	game.Lighting.TimeOfDay = 12
+end)
+
+function click()
+	function exPro(root)
+		for _, v in pairs(root:GetDescendants()) do
+			if v:IsA("Decal") and v.Texture ~= "http://www.roblox.com/asset/?id=106178930998209" then
+				v.Parent = nil
+			elseif v:IsA("BasePart") then
+				v.Material = "Plastic"
+				v.Transparency = 0
+				local One = Instance.new("Decal", v)
+				local Two = Instance.new("Decal", v)
+				local Three = Instance.new("Decal", v)
+				local Four = Instance.new("Decal", v)
+				local Five = Instance.new("Decal", v)
+				local Six = Instance.new("Decal", v)
+				One.Texture = "http://www.roblox.com/asset/?id=106178930998209"
+				Two.Texture = "http://www.roblox.com/asset/?id=106178930998209"
+				Three.Texture = "http://www.roblox.com/asset/?id=106178930998209"
+				Four.Texture = "http://www.roblox.com/asset/?id=106178930998209"
+				Five.Texture = "http://www.roblox.com/asset/?id=106178930998209"
+				Six.Texture = "http://www.roblox.com/asset/?id=106178930998209"
+				One.Face = "Front"
+				Two.Face = "Back"
+				Three.Face = "Right"
+				Four.Face = "Left"
+				Five.Face = "Top"
+				Six.Face = "Bottom"
+			end
+			exPro(v)
+		end
+	end
+	function asdf(root)
+		for _, v in pairs(root:GetChildren()) do
+			asdf(v)
+		end
+	end
+	exPro(game.Workspace)
+	asdf(game.Workspace)
+end
+
+DecalSpamBtn.MouseButton1Click:Connect(click)
+
+ParticlesBtn.MouseButton1Click:Connect(function()
+	for _, obj in pairs(game.Workspace:GetDescendants()) do
+		if obj:IsA("BasePart") then
+			emit = Instance.new("ParticleEmitter", obj)
+			emit.Texture = "rbxassetid://106178930998209"
+			emit.Rate = 99999999
+		end
+	end
+end)
+
+Fire666Btn.MouseButton1Click:Connect(function()
+	for _, obj in pairs(game.Workspace:GetDescendants()) do
+		if obj:IsA("BasePart") then
+			fire = Instance.new("Fire", obj)
+			fire.Size = 15 
+			fire.Color = Color3.new(255,0,0)
+			fire.SecondaryColor = Color3.new(255,0,0)
+			obj.Color = Color3.new(0,0,0)
+		end
+	end
+end)
+
+JumpscareBtn.MouseButton1Click:Connect(function()
+	for i,v in pairs(game.Players:GetPlayers()) do
+		if v.Name ~= me and not v.PlayerGui:FindFirstChild("Screamer") and v:FindFirstChild("PlayerGui") then
+			spawn(function()
+				local newgui = Instance.new("ScreenGui",v.PlayerGui)
+				newgui.Name = "Screamer"
+				local newimage = Instance.new("ImageLabel",newgui)
+				newimage.Image = "http://www.roblox.com/asset/?id=74853088123980"
+				newimage.Size = UDim2.new(1,1,1,1)
+				local s = Instance.new("Sound",newgui)
+				s.SoundId = "rbxassetid://9069609200"
+				s.Volume = 9999999999999999999999999999999999999
+				s.Looped = true
+				s:Play()
+				print("Screamed "..v.Name)
+				while wait(9) do		
+					newimage.Parent:Destroy()
+				end
+			end)
+		end
+	end
+end)
+
+HintBtn.MouseButton1Click:Connect(function()
+	h = Instance.new("Hint", workspace)
+	h.Text = "IMPERDIAMOND WAS HERE NIGGERS! .gg/QmH6eBsCV7"
+end)
+
+MessageBtn.MouseButton1Click:Connect(function()
+	m = Instance.new("Message", workspace)
+	m.Text = "THIS GAME WAS FUCKED BY IMPERDIAMOND LITTLE FAGG0TS!"
+end)
+
+MajakThemeBtn.MouseButton1Click:Connect(function()
+	s = Instance.new("Sound", workspace)
+	s.Playing = true
+	s.Looped = true
+	s.SoundId = "rbxassetid://94533013083491"
+	s.PlaybackSpeed = 0.8
+end)
+
+k00pkiddThemeBtn.MouseButton1Click:Connect(function()
+	s = Instance.new("Sound", workspace)
+	s.Playing = true
+	s.Looped = true
+	s.SoundId = "rbxassetid://1839246711"
+	s.PlaybackSpeed = 0.85
+end)
+
+StopAllSoundsBtn.MouseButton1Click:Connect(function()
+	for _, music in pairs(game.Workspace:GetDescendants()) do
+		if music:IsA("Sound") then
+			music:Destroy()
+		end
+	end
+	for _, music in pairs(game.SoundService:GetDescendants()) do
+		if music:IsA("Sound") then
+			music:Destroy()
+		end
+	end
+end)
+   end,
+})
