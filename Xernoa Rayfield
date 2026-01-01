@@ -43,10 +43,12 @@ local InfoTab = Window:CreateTab("Info ⚙️", 4483362458) -- Title, Image
 local GameHubsTab = Window:CreateTab("Game Hubs 📁", 4483362458) -- Title, Image
 local FEScriptsTab = Window:CreateTab("FE 🖥️‼️", 4483362458) -- Title, Image
 
-local BasicScriptsSection = BasicScriptsTab:CreateSection("Section Example")
-local InfoSection = OtherTab:CreateSection("Info About Script")
+local BasicScriptsSection = BasicScriptsTab:CreateSection("Basics")
+local InfoSection = InfoTab:CreateSection("Info About Script")
 local GameHubsSection = GameHubsTab:CreateSection("Main Games")
 local FEScriptsSection = FEScriptsTab:CreateSection("FE Scriptz 4 u‼️")
+local OtherSection = OtherTab:CreateSection("Other")
+local InfoParagraph = InfoTab:CreateParagraph({Title = "Script Info", Content = "made by x5_vam, join the discord by clicking the copy button..."})
 
 Rayfield:Notify({
    Title = "Hi, User, Join the Discord Server For Updates..",
@@ -115,14 +117,14 @@ local Button = FEScriptsTab:CreateButton({
 })
 
 local Button = GameHubsTab:CreateButton({
-   Name = "VapeVoid Hub",
+   Name = "VapeVoid Hub 99 Nights",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/loader.lua", true))()
    end,
 })
 
 local Button = GameHubsTab:CreateButton({
-   Name = "game hub",
+   Name = "XVC Hub",
    Callback = function()
    loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/61f9e4e53e0d639db1122d02cc47aec30905c362808b723ee3bddbaad6721c9c/download"))()
    end,
@@ -135,7 +137,7 @@ local Button = GameHubsTab:CreateButton({
    end,
 })
 
-local Button = InfoTab:CreateButton({
+local Button = OtherTab:CreateButton({
    Name = "Destroy/Close GUI‼️",
    Callback = function()
    Rayfield:Destroy()
@@ -143,9 +145,9 @@ local Button = InfoTab:CreateButton({
 })
 
 local Button = BasicScriptsTab:CreateButton({
-   Name = "Teleport GUI",
+   Name = "TP Player GUI",
    Callback = function()
-   loadstring(game:HttpGet("https://pastebin.com/pJzTxaTu"))()
+   loadstring(game:HttpGet("https://pastebin.com/raw/Dq1G1mkd"))()
    end,
 })
 
@@ -164,7 +166,7 @@ local Button = GameHubsTab:CreateButton({
 })
 
 local Button = FEScriptsTab:CreateButton({
-   Name = "Skybox Head Aura (prob clientsided)",
+   Name = "Skybox Head Aura",
    Callback = function()
    --[[
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
@@ -525,5 +527,120 @@ StopAllSoundsBtn.MouseButton1Click:Connect(function()
 		end
 	end
 end)
+   end,
+})
+
+local Button = InfoTab:CreateButton({
+   Name = "📋Copy Discord Invite‼️",
+   Callback = function()
+   local ClipboardService = game:GetService("ClipboardService")
+
+local function copyToClipboard(text)
+    ClipboardService:SetText(text)
+    print("Copied to clipboard: " .. text)
+end
+
+copyToClipboard("https://discord.gg/WKwjGkwxAj")
+   end,
+})
+
+local Button = OtherTab:CreateButton({
+   Name = "Rejoin Server🔃",
+   Callback = function()
+   --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local ts = game:GetService("TeleportService")
+
+
+
+local p = game:GetService("Players").LocalPlayer
+
+
+
+
+
+
+
+ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "SpeedHub X (Bloxfruits)",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()
+   end,
+})
+
+local Button = GameHubsTab:CreateButton({
+   Name = "BlindShot OP (keyless)",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastefy.app/3FQXvs1G/raw"))()
+   end,
+})
+
+local Button = FEScriptsTab:CreateButton({
+   Name = "Epik R6 Dance V3 (by g00bl00x)",
+   Callback = function()
+   --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+-- RUN LIMB REANIM NOTI
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "Limb Reanim V2";
+	Text = "ENJOY!";
+	Icon = "rbxthumb://type=Asset&id=13775452736&w=150&h=150"})
+Duration = 15;
+
+-- SETTINGS --
+local settings = _G
+
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 -- 0 to disable
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true --[[ only should be disabled if
+your character havent played ANY animations, otherwise it breaks the reanimate ]]
+settings["Instant respawn"] = false --[[ Instant respawns the
+character, it will still wait the respawn time, but your character wont be dead.
+Requires: replicatesignal function
+Enable if you want the feature
+]]
+settings["Hide HumanoidRootPart"] = false --[[ Enabled by default. when enabled, your chat bubble or name tag
+will not appear above your character, but you will have your character immortal in the Fencing arena.
+]]
+settings["Hide HumanoidRootPart"] = false --[[ Enabled by default. when enabled, your chat bubble or name tag
+will not appear above your character, but you will have your character immortal in the Fencing arena.
+]]
+settings["PermaDeath fake character"] = false --[[When enabled, when you die when the reanimate is on, you
+wont respawn. If you want respawn, set it to false
+]]
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+        
+     loadstring(game:HttpGet("https://gist.githubusercontent.com/lolidkwhy678/1f92d0894e3304be9882126819d54a6d/raw/bd10c958192386ea7db0f8711c865f6fb7faf8c1/CA%2520testing"))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/lolidkwhy678/8789dcee674b733f339fc9376e512287/raw/0faff48438c6091deb3b3672a430cdfb07417111"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/gObl00x/My-Scripts/refs/heads/main/Epik%20R6%20Dancezz.lua"))()
+end)
+
+repeat task.wait() until finished
+   end,
+})
+
+local Button = FEScriptsTab:CreateButton({
+   Name = "g00byd0lan GUI",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/Djv8Bzdw"))()
    end,
 })
