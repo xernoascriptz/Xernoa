@@ -43,7 +43,9 @@ local InfoTab = Window:CreateTab("Info ⚙️", 4483362458) -- Title, Image
 local GameHubsTab = Window:CreateTab("Game Hubs 📁", 4483362458) -- Title, Image
 local FEScriptsTab = Window:CreateTab("FE 🖥️‼️", 4483362458) -- Title, Image
 local ExecutorsTab = Window:CreateTab("Executors🗂️", 4483362458) -- Title, Image
+local UniversalTab = Windows:CreateTab("Universal🌐", 4483362458) -- Title, Image
 
+local UniversalSection = UniversalTab:CreateSection("Universal Hubs🌐!")
 local BasicScriptsSection = BasicScriptsTab:CreateSection("Basics")
 local InfoSection = InfoTab:CreateSection("Info About Script")
 local GameHubsSection = GameHubsTab:CreateSection("Main Games")
@@ -302,7 +304,7 @@ local Button = ExecutorsTab:CreateButton({
 })
 
 local Button = ExecutorsTab:CreateButton({
-   Name = "SS Executor Stigma V3 (Prob Clientsided)",
+   Name = "SS Executor (Prob Clientsided)",
    Callback = function()
    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-ss-executor-46339"))()
    end,
@@ -316,4 +318,18 @@ local Button = BasicScriptsTab:CreateButton({
 ]]
 loadstring(game:HttpGet("https://pastebin.com/raw/PeAgmvSt"))()
    end,
+})
+
+local Button = GameHubsTab:CreateButton({
+        Name = "SWNHUB Escape Tsunami 4 Brainrots",
+        Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/pbb6mA32"))()
+        end,
+})
+
+local Button = UniversalTab:CreateButton({
+        Name = "Spiem Hub Universal",
+        Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/perfectusmim1/spiemhub/refs/heads/main/loader"))()
+        end,
 })
