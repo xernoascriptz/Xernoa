@@ -43,7 +43,7 @@ local InfoTab = Window:CreateTab("Info ⚙️", 4483362458) -- Title, Image
 local GameHubsTab = Window:CreateTab("Game Hubs 📁", 4483362458) -- Title, Image
 local FEScriptsTab = Window:CreateTab("FE 🖥️‼️", 4483362458) -- Title, Image
 local ExecutorsTab = Window:CreateTab("Executors🗂️", 4483362458) -- Title, Image
-local UniversalTab = Windows:CreateTab("Universal🌐", 4483362458) -- Title, Image
+local UniversalTab = Window:CreateTab("Universal🌐", 4483362458) -- Title, Image
 
 local UniversalSection = UniversalTab:CreateSection("Universal Hubs🌐!")
 local BasicScriptsSection = BasicScriptsTab:CreateSection("Basics")
